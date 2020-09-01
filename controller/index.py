@@ -34,14 +34,13 @@ class Index:
             if not ltable[i]:
                 pass
             else:
-                j=1
                 for j in range(6):
                     if j==1:
                         linhas +="<tr><td>"+str(i)+"</td>"
                         linhas +="<td>"+str(ltable[i][j])+"</td>"
                     elif j==5:
                         linhas +="<td>"+str(ltable[i][j])+"</td></tr>"
-                    else:
+                    elif j!=1:
                         linhas +="<td>"+str(ltable[i][j])+"</td>"
         indexPage += linhas+"</table>"                
         return indexPage
