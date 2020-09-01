@@ -34,19 +34,19 @@ class Index:
             if not ltable[i]:
                 pass
             else:
-                for j in range(6):
+                for j in range(1,6):
                     if j==1:
-                        linhas +="<tr><td>"+str(i)+"</td>"
+                        linhas +="<tr><td>"+str(ltable[i][0])+"</td>"
                         linhas +="<td>"+str(ltable[i][j])+"</td>"
                     elif j==5:
                         linhas +="<td>"+str(ltable[i][j])+"</td></tr>"
-                    elif j!=1:
-                        linhas +="<td>"+str(ltable[i][j])+"</td>"
+                    else:
+                        linhas +="<td>"+str(ltable[i][j])+"</td>"       
         indexPage += linhas+"</table>"                
         return indexPage
     
     def PopulaIndex(self,ids,idr,hr,stf,msg):
-        global cont,idxT
+        global cont,idxT,ltable
         if cont==30:
             cont=0
         ltable[cont]=[idxT,ids,idr,hr,stf,msg]
@@ -55,7 +55,8 @@ class Index:
         for x in range(len(lista_tupla_ordenada)):
            ltable[x]=lista_tupla_ordenada[x]  
         cont+=1
-        idxT+=1   
+        idxT+=1
+         
 
 pass
 
