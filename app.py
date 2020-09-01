@@ -4,11 +4,12 @@ import sys,os
 import time
 import telepot
 from telepot.loop import MessageLoop
+from telepot.aio.delegate import pave_event_space, per_chat_id, create_open
 from controller import core
 from controller import index
 business = core.Core()
 idx = index.Index()
-bot = telepot.Bot(os.getenv('ID_BOT'))
+
 
 
 app = Flask(__name__)
@@ -21,13 +22,14 @@ def index():
 
 def handle(msg):
     content_type, chat_type, chat_id = telepot.glance(msg)
-
-    if content_type == 'photo'and chat_id == int(os.getenv('ID_LISTEN')):
+    chatid = int("-459839545")
+    if content_type == 'photo'and chat_id == chatid:
         business.EnviaFoto(msg)
-    if content_type == 'text' and chat_id == int(os.getenv('ID_LISTEN')):
+    if content_type == 'text' and chat_id == chatid:
         business.EnviaMsg(msg)    
 
 def main():
+    bot = telepot.Bot("1302528698:AAGV4qG8IkcWjt7ODYv8b8Id7Uf6JrnD4ok")
     MessageLoop(bot, handle).run_as_thread()
     print ('Escutando ...')
     port = int(os.environ.get("PORT",5000))

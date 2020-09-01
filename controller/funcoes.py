@@ -2,10 +2,10 @@ import telepot
 import os
 import json
 from datetime import datetime
-list1 = [os.getenv('NAME_GROUPS')]
-list2 = [os.getenv('GROUPS_IDS')]
-name_groups = []
-groups_id = []
+#list1 = ['TEN','VOL','CAV']
+#list2 = ['-439019312','-437201495','-446151491']
+name_groups = ['TEN','VOL','CAV']
+groups_id = ['-439019312','-437201495','-446151491']
 
 class Funcoes:
     def __init__(self): 
@@ -13,11 +13,11 @@ class Funcoes:
 
     def GetGroupsAndIds(self):
         # Armazena name groups
-        for items in list1:
-            name_groups = items.split(',')
+        #for items in list1:
+            #name_groups = items.split(',')
         # Armazena id groups
-        for items in list2:
-            groups_id = items.split(',')
+        #for items in list2:
+            #groups_id = items.split(',')
         return groups_id,name_groups
 
     def retornaIdGroupSendMsg(self,text):
