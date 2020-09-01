@@ -1,5 +1,5 @@
 import os
-ltable = [[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]]
+ltable = [[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]]
 cont = 0
 
 
@@ -46,7 +46,7 @@ class Index:
     
     def PopulaIndex(self,ids,idr,hr,stf,msg):
         global cont
-        if cont==16:
+        if cont==30:
             cont=0
         ltable[cont]=[ids,idr,hr,stf,msg] 
         cont+=1   

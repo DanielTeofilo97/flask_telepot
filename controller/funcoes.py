@@ -1,7 +1,7 @@
 import telepot
 import os
 import json
-from datetime import datetime
+from datetime import datetime, timedelta
 #list1 = ['TEN','VOL','CAV']
 #list2 = ['-439019312','-437201495','-446151491']
 name_groups = ['TEN','VOL','CAV']
@@ -48,7 +48,7 @@ class Funcoes:
         return json4
 
     def Now(self):
-        now = datetime.now()
+        now = datetime.now()- timedelta(hours=3)
         now = now.strftime("%d/%m/%Y %H:%M:%S")
         return now    
 
